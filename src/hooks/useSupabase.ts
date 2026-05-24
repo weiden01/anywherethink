@@ -7,11 +7,18 @@ export const useTrades = () => {
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    fetchTrades()
+    if (supabase) {
+      fetchTrades()
+    } else {
+      setLoading(false)
+      setError('Supabase가 설정되지 않았습니다')
+      console.warn('Supabase 환경 변수를 설정하세요')
+    }
   }, [])
 
   const fetchTrades = async () => {
     try {
+      if (!supabase) throw new Error('Supabase가 초기화되지 않았습니다')
       setLoading(true)
       const { data, error } = await supabase
         .from('trades')
@@ -85,6 +92,7 @@ export const useTrades = () => {
 export const useImageUpload = () => {
   const uploadImage = async (file: File, tradeId: string): Promise<string> => {
     try {
+      if (!supabase) throw new Error('Supabase가 초기화되지 않았습니다')
       const fileExt = file.name.split('.').pop()
       const fileName = `${tradeId}_${Date.now()}.${fileExt}`
       const filePath = `${fileName}`
