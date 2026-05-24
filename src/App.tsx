@@ -34,7 +34,7 @@ function App() {
       await updateTrade(selectedTrade.id, { image_url: imageUrl })
       setSelectedTrade(null)
     } catch (err) {
-      console.error('Error uploading image:', err)
+      console.error('사진 업로드 오류:', err)
     } finally {
       setUploadLoading(false)
     }

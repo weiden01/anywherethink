@@ -43,11 +43,11 @@ export const TradeTable: React.FC<Props> = ({ trades, onDelete, onSelectImage })
             <th className="text-left py-3 px-4 font-semibold text-[var(--text-h)]">날짜</th>
             <th className="text-left py-3 px-4 font-semibold text-[var(--text-h)]">종목</th>
             <th className="text-left py-3 px-4 font-semibold text-[var(--text-h)]">신호/이유</th>
-            <th className="text-right py-3 px-4 font-semibold text-[var(--text-h)]">목표</th>
+            <th className="text-right py-3 px-4 font-semibold text-[var(--text-h)]">목표가</th>
             <th className="text-right py-3 px-4 font-semibold text-[var(--text-h)]">수익</th>
             <th className="text-right py-3 px-4 font-semibold text-[var(--text-h)]">수익률</th>
             <th className="text-left py-3 px-4 font-semibold text-[var(--text-h)]">진입시점</th>
-            <th className="text-center py-3 px-4 font-semibold text-[var(--text-h)]">사진</th>
+            <th className="text-center py-3 px-4 font-semibold text-[var(--text-h)]">차트</th>
             <th className="text-center py-3 px-4 font-semibold text-[var(--text-h)]">삭제</th>
           </tr>
         </thead>

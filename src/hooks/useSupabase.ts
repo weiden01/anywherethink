@@ -21,7 +21,7 @@ export const useTrades = () => {
       if (error) throw error
       setTrades(data || [])
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Error fetching trades')
+      setError(err instanceof Error ? err.message : '거래 데이터를 불러오는 중 오류가 발생했습니다')
     } finally {
       setLoading(false)
     }
@@ -40,7 +40,7 @@ export const useTrades = () => {
       }
       return data?.[0]
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Error adding trade')
+      setError(err instanceof Error ? err.message : '거래를 추가하는 중 오류가 발생했습니다')
       throw err
     }
   }
@@ -59,7 +59,7 @@ export const useTrades = () => {
       }
       return data?.[0]
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Error updating trade')
+      setError(err instanceof Error ? err.message : '거래를 수정하는 중 오류가 발생했습니다')
       throw err
     }
   }
@@ -74,7 +74,7 @@ export const useTrades = () => {
       if (error) throw error
       setTrades(trades.filter(t => t.id !== id))
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Error deleting trade')
+      setError(err instanceof Error ? err.message : '거래를 삭제하는 중 오류가 발생했습니다')
       throw err
     }
   }
@@ -101,7 +101,7 @@ export const useImageUpload = () => {
 
       return data.publicUrl
     } catch (err) {
-      throw new Error(err instanceof Error ? err.message : 'Error uploading image')
+      throw new Error(err instanceof Error ? err.message : '사진을 업로드하는 중 오류가 발생했습니다')
     }
   }
 

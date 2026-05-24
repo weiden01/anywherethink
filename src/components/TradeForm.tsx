@@ -56,7 +56,7 @@ export const TradeForm: React.FC<Props> = ({ onSubmit, isLoading }) => {
       })
       setIsOpen(false)
     } catch (err) {
-      console.error('Error submitting form:', err)
+      console.error('폼 제출 오류:', err)
     }
   }
 
